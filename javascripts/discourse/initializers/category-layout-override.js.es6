@@ -11,7 +11,7 @@ export default {
         @discourseComputed("model.parentCategory")
         categoryPageStyle(parentCategory) {
           let value = this._super();
-          if (!this.site.mobileView && !parentCategory) {
+          if (this.site.mobileView && !parentCategory) {
             return dasherize(settings.categories_layout);
           }
           return value;
@@ -20,7 +20,7 @@ export default {
 
       api.modifyClass("route:discovery.categories", {
         findCategories() {
-          let style = !this.site.mobileView && settings.categories_layout;
+          let style = this.site.mobileView && settings.categories_layout;
 
           let parentCategory = this.get("model.parentCategory");
           if (parentCategory) {
