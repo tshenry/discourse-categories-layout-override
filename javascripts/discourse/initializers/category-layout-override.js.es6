@@ -8,6 +8,7 @@ export default {
   initialize() {
     withPluginApi("0.8", api => {
       api.modifyClass("controller:discovery/categories", {
+        pluginId: 'category-layout-override',
         @discourseComputed("model.parentCategory")
         categoryPageStyle(parentCategory) {
           let value = this._super();
@@ -19,6 +20,7 @@ export default {
       });
 
       api.modifyClass("route:discovery.categories", {
+        pluginId: 'category-layout-override',
         findCategories() {
           let style = this.site.mobileView && settings.categories_layout;
 
