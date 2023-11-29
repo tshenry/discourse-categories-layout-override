@@ -4,6 +4,9 @@ categories_layout:
   choices:
     - categories_only
     - categories_with_featured_topics
+    - categories_and_latest_topics_created_date
+    - categories_and_latest_topics
     - categories_and_top_topics
     - categories_boxes
     - categories_boxes_with_topics
+    - subcategories_with_featured_topics
